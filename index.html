@@ -290,11 +290,72 @@
       letter-spacing: 0.05em;
     }
 
+    /* ── SCHEDULE ── */
+    .schedule {
+      display: flex;
+      gap: 0;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .schedule__day {
+      flex: 1;
+      padding: 0 2.5rem;
+    }
+    .schedule__day:first-child {
+      padding-left: 0;
+      border-right: 1px solid var(--border);
+    }
+    .schedule__day:last-child {
+      padding-right: 0;
+    }
+    .schedule__date {
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+    .schedule__list {
+      list-style: none;
+    }
+    .schedule__item {
+      display: flex;
+      align-items: baseline;
+      gap: 2rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .schedule__item:last-child {
+      border-bottom: none;
+    }
+    .schedule__time {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      white-space: nowrap;
+      min-width: 70px;
+    }
+    .schedule__event {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       .hero__name { font-size: clamp(2.8rem, 14vw, 5rem); }
       .details { flex-direction: column; gap: 2rem; padding: 3rem 1.5rem; }
       .details__divider { display: none; }
+      .schedule { flex-direction: column; gap: 2.5rem; }
+      .schedule__day { padding: 0 !important; border-right: none !important; }
+      .schedule__day:first-child { border-bottom: 1px solid var(--border); padding-bottom: 2.5rem !important; }
       .rsvp__form { padding: 1.75rem 1.25rem; }
       .toggle-group { flex-direction: column; }
       .toggle-btn { width: 100%; }
@@ -330,6 +391,41 @@
   <div class="details__item">
     <p class="details__label">Venue</p>
     <p class="details__value">Shree Rajlaxmi Heaven's</p>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="schedule">
+  <div class="schedule__day">
+    <h3 class="schedule__date">22nd December</h3>
+    <ul class="schedule__list">
+      <li class="schedule__item">
+        <span class="schedule__time">11:00 AM</span>
+        <span class="schedule__event">Haldi</span>
+      </li>
+      <li class="schedule__item">
+        <span class="schedule__time">8:00 PM</span>
+        <span class="schedule__event">Sangeet</span>
+      </li>
+    </ul>
+  </div>
+  <div class="schedule__divider" aria-hidden="true"></div>
+  <div class="schedule__day">
+    <h3 class="schedule__date">23rd December</h3>
+    <ul class="schedule__list">
+      <li class="schedule__item">
+        <span class="schedule__time">11:00 AM</span>
+        <span class="schedule__event">Barat</span>
+      </li>
+      <li class="schedule__item">
+        <span class="schedule__time">1:00 PM</span>
+        <span class="schedule__event">Lunch</span>
+      </li>
+      <li class="schedule__item">
+        <span class="schedule__time">4:00 PM</span>
+        <span class="schedule__event">Pheras</span>
+      </li>
+    </ul>
   </div>
 </section>
 
