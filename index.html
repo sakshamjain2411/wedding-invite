@@ -9,14 +9,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --navy:       #0a0a1a;
-      --navy-mid:   #12122a;
-      --gold:       #c9a84c;
-      --champagne:  #f0d98c;
-      --text:       #f5f0e8;
-      --text-muted: #b8b0a0;
-      --card-bg:    rgba(255,255,255,0.04);
-      --border:     rgba(201,168,76,0.35);
+      --navy:       #1a0a0a;
+      --navy-mid:   #2a1010;
+      --gold:       #c94c4c;
+      --champagne:  #f5e6d3;
+      --text:       #fdf6ee;
+      --text-muted: #c4a898;
+      --card-bg:    rgba(255,255,255,0.05);
+      --border:     rgba(201,76,76,0.35);
       --error:      #dd8888;
       --font-serif: 'Cormorant Garamond', Georgia, serif;
       --font-sans:  'Lato', Arial, sans-serif;
@@ -315,6 +315,29 @@
       color: var(--champagne);
       letter-spacing: 0.05em;
     }
+
+    /* ── SECTION SEPARATOR ── */
+    .sep {
+      display: block;
+      width: 1px;
+      height: 60px;
+      background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+      margin: 0 auto;
+      opacity: 0.5;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 480px) {
+      .details {
+        flex-direction: column;
+        margin: 0 1rem;
+        gap: 1.5rem;
+      }
+      .details__divider { display: none; }
+      .rsvp__form { padding: 1.75rem 1.25rem; }
+      .toggle-group { flex-direction: column; }
+      .toggle-btn { min-width: 100%; }
+    }
   </style>
 </head>
 <body>
@@ -335,6 +358,8 @@
   <span class="names__diamond">✦</span>
 </section>
 
+<span class="sep"></span>
+
 <!-- EVENT DETAILS -->
 <section class="details">
   <div class="details__item">
@@ -347,6 +372,8 @@
     <p class="details__value">Shree Rajlaxmi Heaven's</p>
   </div>
 </section>
+
+<span class="sep"></span>
 
 <!-- QUOTE -->
 <section class="quote">
