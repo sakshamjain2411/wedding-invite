@@ -33,11 +33,137 @@
       line-height: 1.7;
       min-height: 100vh;
     }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 500px;
+      overflow: hidden;
+    }
+    .hero__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: brightness(0.55) sepia(0.2);
+    }
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(to bottom, rgba(10,10,26,0.2) 0%, rgba(10,10,26,0.6) 100%);
+    }
+    .hero__label {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 8vw, 6rem);
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      color: var(--champagne);
+      text-transform: uppercase;
+      text-shadow: 0 2px 30px rgba(0,0,0,0.5);
+    }
+
+    /* ── NAMES ── */
+    .names {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 5rem 1.5rem 3rem;
+      gap: 0.25rem;
+    }
+    .names__heading {
+      font-family: var(--font-serif);
+      font-size: clamp(3rem, 10vw, 7rem);
+      font-weight: 300;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      line-height: 1.1;
+    }
+    .names__amp {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-style: italic;
+      color: var(--champagne);
+      margin: 0.5rem 0;
+    }
+    .diamond {
+      color: var(--gold);
+      font-size: 1.25rem;
+      margin: 0.75rem 0;
+      opacity: 0.8;
+    }
+
+    /* ── EVENT DETAILS ── */
+    .details {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding: 2rem 1.5rem 4rem;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin: 0 2rem;
+    }
+    .details__item {
+      text-align: center;
+    }
+    .details__label {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+    .details__value {
+      font-family: var(--font-serif);
+      font-size: clamp(1.1rem, 3vw, 1.6rem);
+      color: var(--champagne);
+      font-weight: 400;
+    }
+    .details__divider {
+      color: var(--gold);
+      font-size: 1rem;
+      opacity: 0.6;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Sections go here in subsequent tasks -->
+  <!-- HERO -->
+<section class="hero">
+  <!-- TODO: Replace src with real couple photo -->
+  <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&q=80" alt="Saksham and Vasundhara" class="hero__img" />
+  <div class="hero__overlay">
+    <p class="hero__label">Save the Date</p>
+  </div>
+</section>
+
+<!-- NAMES -->
+<section class="names">
+  <span class="diamond">✦</span>
+  <h1 class="names__heading">Saksham</h1>
+  <p class="names__amp">&amp;</p>
+  <h1 class="names__heading">Vasundhara</h1>
+  <span class="diamond">✦</span>
+</section>
+
+<!-- EVENT DETAILS -->
+<section class="details">
+  <div class="details__item">
+    <p class="details__label">The Celebration</p>
+    <p class="details__value">22nd &amp; 23rd December 2026</p>
+  </div>
+  <div class="details__divider">✦</div>
+  <div class="details__item">
+    <p class="details__label">Venue</p>
+    <p class="details__value">Shree Rajlaxmi Heaven's</p>
+  </div>
+</section>
 
   <script>
     // JS goes here in Task 4
