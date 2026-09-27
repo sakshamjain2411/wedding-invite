@@ -9,14 +9,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --navy:       #1a0a0a;
-      --navy-mid:   #2a1010;
-      --gold:       #c94c4c;
-      --champagne:  #f5e6d3;
-      --text:       #fdf6ee;
-      --text-muted: #c4a898;
-      --card-bg:    rgba(255,255,255,0.05);
-      --border:     rgba(201,76,76,0.35);
+      --navy:       #2c0f0f;
+      --navy-mid:   #3d1515;
+      --gold:       #b5444a;
+      --champagne:  #f2dcc8;
+      --text:       #fdf4ec;
+      --text-muted: #c9a898;
+      --card-bg:    rgba(255,255,255,0.06);
+      --border:     rgba(181,68,74,0.4);
       --error:      #dd8888;
       --font-serif: 'Cormorant Garamond', Georgia, serif;
       --font-sans:  'Lato', Arial, sans-serif;
@@ -77,6 +77,7 @@
       gap: 0.25rem;
     }
     .names__heading {
+      text-align: center;
       font-family: var(--font-serif);
       font-size: clamp(3rem, 10vw, 7rem);
       font-weight: 300;
@@ -86,7 +87,7 @@
     }
     .names__sep {
       font-family: var(--font-serif);
-      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-size: clamp(2.5rem, 4vw, 2.5rem);
       font-style: italic;
       color: var(--champagne);
       display: block;
@@ -221,11 +222,9 @@
     .toggle-group {
       display: flex;
       gap: 0.75rem;
-      flex-wrap: wrap;
     }
     .toggle-btn {
       flex: 1;
-      min-width: 140px;
       padding: 0.75rem 1rem;
       background: transparent;
       border: 1px solid var(--border);
@@ -336,7 +335,7 @@
       .details__divider { display: none; }
       .rsvp__form { padding: 1.75rem 1.25rem; }
       .toggle-group { flex-direction: column; }
-      .toggle-btn { min-width: 100%; }
+      .toggle-btn { width: 100%; }
     }
   </style>
 </head>
@@ -399,8 +398,8 @@
     </div>
 
     <div class="form-group">
+      <span class="form-label" id="attendingLabel">Will you be attending?</span>
       <div class="toggle-group" role="group" aria-labelledby="attendingLabel">
-        <span class="form-label" id="attendingLabel">Will you be attending?</span>
         <button type="button" class="toggle-btn" id="btnYes" data-value="yes" aria-describedby="attendingError">Joyfully Accept</button>
         <button type="button" class="toggle-btn" id="btnNo"  data-value="no" aria-describedby="attendingError">Regretfully Decline</button>
       </div>
