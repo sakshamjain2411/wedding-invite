@@ -9,30 +9,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --navy:       #eeede7;
-      --navy-mid:   #dddcd6;
-      --gold:       #8b2a2a;
-      --champagne:  #5c1a1a;
-      --text:       #2a0f0f;
-      --text-muted: #7a5555;
-      --card-bg:    rgba(0,0,0,0.04);
-      --border:     rgba(139,42,42,0.3);
-      --error:      #cc4444;
+      --bg:         #eeede7;
+      --text:       #1a1a1a;
+      --text-muted: #888880;
+      --accent:     #1a1a1a;
+      --border:     rgba(26,26,26,0.15);
+      --card-bg:    rgba(26,26,26,0.04);
+      --error:      #b94040;
       --font-serif: 'Cormorant Garamond', Georgia, serif;
       --font-sans:  'Lato', Arial, sans-serif;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
 
     body {
-      background-color: var(--navy);
+      background-color: var(--bg);
       color: var(--text);
       font-family: var(--font-sans);
       font-weight: 300;
       line-height: 1.7;
-      min-height: 100vh;
     }
 
     /* ── HERO ── */
@@ -40,7 +36,7 @@
       position: relative;
       width: 100%;
       height: 100vh;
-      min-height: 500px;
+      min-height: 560px;
       overflow: hidden;
     }
     .hero__img {
@@ -48,139 +44,130 @@
       height: 100%;
       object-fit: cover;
       object-position: center top;
-      filter: brightness(0.55) sepia(0.2);
+      filter: grayscale(1) brightness(0.75);
     }
-    .hero__overlay {
+    /* Names overlay — top-left, large */
+    .hero__names {
       position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(to bottom, rgba(10,10,26,0.2) 0%, rgba(10,10,26,0.6) 100%);
+      top: 6%;
+      left: 4%;
+      right: 4%;
     }
-    .hero__label {
+    .hero__names h1 {
       font-family: var(--font-serif);
-      font-size: clamp(2.5rem, 8vw, 6rem);
+      font-size: clamp(3.5rem, 11vw, 9rem);
       font-weight: 300;
-      letter-spacing: 0.25em;
-      color: var(--champagne);
+      color: #eeede7;
+      letter-spacing: 0.04em;
+      line-height: 1;
       text-transform: uppercase;
-      text-shadow: 0 2px 30px rgba(0,0,0,0.5);
     }
-
-    /* ── NAMES ── */
-    .names {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 5rem 1.5rem 3rem;
-      gap: 0.25rem;
-    }
-    .names__heading {
-      text-align: center;
-      font-family: var(--font-serif);
-      font-size: clamp(3rem, 10vw, 7rem);
-      font-weight: 300;
-      color: var(--gold);
-      letter-spacing: 0.1em;
-      line-height: 1.1;
-    }
-    .names__sep {
-      font-family: var(--font-serif);
-      font-size: clamp(2.5rem, 4vw, 2.5rem);
+    .hero__names h1 .amp {
       font-style: italic;
-      color: var(--champagne);
-      display: block;
-      margin: 0.25rem 0;
+      text-transform: none;
+      font-size: 0.85em;
+      letter-spacing: 0;
     }
-    .names__diamond {
-      color: var(--gold);
-      font-size: 1.25rem;
-      margin: 0.75rem 0;
-      opacity: 0.8;
+    /* Date bottom-left, hashtag bottom-right */
+    .hero__bottom {
+      position: absolute;
+      bottom: 5%;
+      left: 4%;
+      right: 4%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .hero__date, .hero__tag {
+      font-family: var(--font-sans);
+      font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+      font-weight: 300;
+      color: rgba(238,237,231,0.85);
+      letter-spacing: 0.08em;
+    }
+    /* Thin line under names */
+    .hero__line {
+      width: 340px;
+      max-width: 80%;
+      height: 1px;
+      background: rgba(238,237,231,0.5);
+      margin-top: 0.75rem;
     }
 
-    .diamond-sep {
-      color: var(--gold);
-      font-size: 1.25rem;
-      margin: 0.75rem 0;
-      opacity: 0.8;
-      display: inline-block;
+    /* ── CONTENT AREA (below hero) ── */
+    .content {
+      background: var(--bg);
     }
 
-    /* ── EVENT DETAILS ── */
+    /* ── DETAILS ── */
     .details {
       display: flex;
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 3rem 5rem;
-      padding: 3rem 2rem 4rem;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      max-width: 720px;
+      gap: 2rem 6rem;
+      padding: 5rem 2rem 4rem;
+      max-width: 800px;
       margin: 0 auto;
+      border-bottom: 1px solid var(--border);
     }
-    .details__item {
-      text-align: center;
-    }
+    .details__item { text-align: center; }
     .details__label {
-      font-size: 0.7rem;
-      letter-spacing: 0.25em;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
       text-transform: uppercase;
       color: var(--text-muted);
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.5rem;
     }
     .details__value {
       font-family: var(--font-serif);
-      font-size: clamp(1.1rem, 3vw, 1.6rem);
-      color: var(--champagne);
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      color: var(--text);
       font-weight: 400;
+      line-height: 1.2;
     }
     .details__divider {
-      color: var(--gold);
-      font-size: 1rem;
-      opacity: 0.6;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      opacity: 0.5;
     }
 
     /* ── QUOTE ── */
     .quote {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 4rem 2rem;
-      max-width: 680px;
+      max-width: 640px;
       margin: 0 auto;
+      padding: 4rem 2rem;
       text-align: center;
     }
     .quote__text {
       font-family: var(--font-serif);
-      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
       font-style: italic;
       font-weight: 300;
       color: var(--text-muted);
       line-height: 1.9;
-      margin: 1.5rem 0;
     }
 
     /* ── RSVP ── */
     .rsvp {
-      padding: 4rem 1.5rem 5rem;
-      max-width: 560px;
+      padding: 4rem 1.5rem 6rem;
+      max-width: 520px;
       margin: 0 auto;
       text-align: center;
+      border-top: 1px solid var(--border);
     }
     .rsvp__heading {
       font-family: var(--font-serif);
-      font-size: clamp(1.8rem, 5vw, 3rem);
-      font-weight: 400;
-      color: var(--gold);
-      letter-spacing: 0.15em;
-      margin-bottom: 0.5rem;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 300;
+      color: var(--text);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
     }
     .rsvp__sub {
-      font-size: 0.8rem;
-      letter-spacing: 0.15em;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--text-muted);
       margin-bottom: 2.5rem;
@@ -188,81 +175,73 @@
     .rsvp__form {
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 4px;
       padding: 2.5rem 2rem;
       text-align: left;
     }
-    .form-group {
-      margin-bottom: 1.75rem;
-    }
+    .form-group { margin-bottom: 1.75rem; }
     .form-label {
       display: block;
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--text-muted);
       margin-bottom: 0.6rem;
     }
     .form-input {
       width: 100%;
-      background: rgba(0,0,0,0.04);
-      border: 1px solid var(--border);
-      border-radius: 2px;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--border);
       color: var(--text);
       font-family: var(--font-sans);
       font-size: 1rem;
-      padding: 0.75rem 1rem;
+      font-weight: 300;
+      padding: 0.5rem 0;
       outline: none;
       transition: border-color 0.2s;
+      border-radius: 0;
     }
-    .form-input:focus { border-color: var(--gold); }
-    .form-input--narrow { width: 120px; }
-    .form-input::placeholder { color: rgba(42,15,15,0.35); }
+    .form-input:focus { border-bottom-color: var(--text); }
+    .form-input--narrow { width: 100px; }
+    .form-input::placeholder { color: rgba(26,26,26,0.3); }
 
     /* Toggle buttons */
-    .toggle-group {
-      display: flex;
-      gap: 0.75rem;
-    }
+    .toggle-group { display: flex; gap: 0.75rem; }
     .toggle-btn {
       flex: 1;
-      padding: 0.75rem 1rem;
+      padding: 0.7rem 1rem;
       background: transparent;
       border: 1px solid var(--border);
-      border-radius: 2px;
       color: var(--text-muted);
       font-family: var(--font-sans);
-      font-size: 0.85rem;
-      letter-spacing: 0.05em;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
       cursor: pointer;
       transition: all 0.2s;
     }
-    .toggle-btn:hover { border-color: var(--gold); color: var(--champagne); }
+    .toggle-btn:hover { border-color: var(--text); color: var(--text); }
     .toggle-btn.active {
-      background: var(--gold);
-      border-color: var(--gold);
-      color: var(--navy);
+      background: var(--text);
+      border-color: var(--text);
+      color: var(--bg);
       font-weight: 400;
     }
 
     /* Errors */
     .form-error {
       display: none;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       color: var(--error);
       margin-top: 0.4rem;
     }
-    .form-error--submit {
-      margin-top: 1rem;
-      text-align: center;
-    }
+    .form-error--submit { margin-top: 1rem; text-align: center; }
 
     /* Success */
     .form-success {
       font-family: var(--font-serif);
       font-size: 1.1rem;
       font-style: italic;
-      color: var(--champagne);
+      color: var(--text-muted);
       text-align: center;
       margin-top: 1.5rem;
       line-height: 1.8;
@@ -271,27 +250,20 @@
     /* Submit button */
     .submit-btn {
       width: 100%;
-      padding: 1rem;
-      background: transparent;
-      border: 1px solid var(--gold);
-      border-radius: 2px;
-      color: var(--gold);
+      padding: 0.9rem;
+      background: var(--text);
+      border: 1px solid var(--text);
+      color: var(--bg);
       font-family: var(--font-sans);
-      font-size: 0.8rem;
+      font-size: 0.72rem;
       letter-spacing: 0.3em;
       text-transform: uppercase;
       cursor: pointer;
       transition: all 0.25s;
       margin-top: 0.5rem;
     }
-    .submit-btn:hover {
-      background: var(--gold);
-      color: var(--navy);
-    }
-    .submit-btn:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
+    .submit-btn:hover { background: transparent; color: var(--text); }
+    .submit-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 
     /* ── FOOTER ── */
     .footer {
@@ -300,38 +272,26 @@
       align-items: center;
       padding: 3rem 1.5rem 4rem;
       border-top: 1px solid var(--border);
-      gap: 0.5rem;
+      gap: 0.4rem;
       text-align: center;
     }
     .footer__text {
       font-family: var(--font-serif);
       font-style: italic;
-      font-size: 1.1rem;
+      font-size: 1rem;
       color: var(--text-muted);
     }
     .footer__family {
       font-family: var(--font-serif);
-      font-size: 1.3rem;
-      color: var(--champagne);
+      font-size: 1.2rem;
+      color: var(--text);
       letter-spacing: 0.05em;
     }
 
-    /* ── SECTION SEPARATOR ── */
-    .sep {
-      display: block;
-      width: 1px;
-      height: 60px;
-      background: linear-gradient(to bottom, transparent, var(--gold), transparent);
-      margin: 0 auto;
-      opacity: 0.5;
-    }
-
     /* ── RESPONSIVE ── */
-    @media (max-width: 480px) {
-      .details {
-        flex-direction: column;
-        gap: 1.5rem;
-      }
+    @media (max-width: 600px) {
+      .hero__names h1 { font-size: clamp(2.8rem, 14vw, 5rem); }
+      .details { flex-direction: column; gap: 2rem; padding: 3rem 1.5rem; }
       .details__divider { display: none; }
       .rsvp__form { padding: 1.75rem 1.25rem; }
       .toggle-group { flex-direction: column; }
@@ -345,19 +305,17 @@
 <section class="hero">
   <!-- TODO: Replace src with real couple photo -->
   <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&q=80" alt="Saksham and Vasundhara" class="hero__img" />
-  <div class="hero__overlay">
-    <h2 class="hero__label">Save the Date</h2>
+  <div class="hero__names">
+    <h1>Saksham <span class="amp">&amp;</span> Vasundhara</h1>
+    <div class="hero__line"></div>
+  </div>
+  <div class="hero__bottom">
+    <span class="hero__date">22nd &amp; 23rd December 2026</span>
+    <span class="hero__tag">Shree Rajlaxmi Heaven's</span>
   </div>
 </section>
 
-<!-- NAMES -->
-<section class="names">
-  <span class="names__diamond">✦</span>
-  <h1 class="names__heading">Saksham <span class="names__sep">&amp;</span> Vasundhara</h1>
-  <span class="names__diamond">✦</span>
-</section>
-
-<span class="sep"></span>
+<div class="content">
 
 <!-- EVENT DETAILS -->
 <section class="details">
@@ -372,15 +330,11 @@
   </div>
 </section>
 
-<span class="sep"></span>
-
 <!-- QUOTE -->
 <section class="quote">
-  <span class="diamond-sep" aria-hidden="true">✦</span>
   <blockquote class="quote__text">
     To everyone who has loved us, raised us, guided us and celebrated us along the way — this day carries a little piece of each of you.
   </blockquote>
-  <span class="diamond-sep" aria-hidden="true">✦</span>
 </section>
 
 <!-- RSVP -->
@@ -416,7 +370,7 @@
     <button type="submit" class="submit-btn" id="submitBtn">Send RSVP</button>
 
     <p class="form-success" id="formSuccess" style="display:none">
-      ✦ Thank you! Your RSVP has been received. We look forward to celebrating with you.
+      Thank you — your RSVP has been received. We look forward to celebrating with you.
     </p>
     <p class="form-error form-error--submit" id="formError" style="display:none">
       Something went wrong. Please try again or contact us directly.
@@ -426,11 +380,11 @@
 
 <!-- FOOTER -->
 <footer class="footer">
-  <span class="diamond-sep" aria-hidden="true">✦</span>
   <p class="footer__text">With love &amp; joy,</p>
   <p class="footer__family">The Families of Saksham &amp; Vasundhara</p>
-  <span class="diamond-sep" aria-hidden="true">✦</span>
 </footer>
+
+</div>
 
   <script>
     const btnYes       = document.getElementById('btnYes');
