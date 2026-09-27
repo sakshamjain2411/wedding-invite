@@ -57,7 +57,7 @@
     }
     .hero__name {
       font-family: var(--font-serif);
-      font-size: clamp(3.5rem, 11vw, 9rem);
+      font-size: clamp(3.5rem, 9vw, 9rem);
       font-weight: 600;
       color: #eeede7;
       letter-spacing: 0.06em;
@@ -106,16 +106,14 @@
     /* ── DETAILS ── */
     .details {
       display: flex;
+      flex-direction: row;
       align-items: center;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 2rem 6rem;
+      gap: 4rem;
       padding: 5rem 2rem 4rem;
-      max-width: 800px;
-      margin: 0 auto;
       border-bottom: 1px solid var(--border);
     }
-    .details__item { text-align: center; }
+    .details__item { text-align: center; flex-shrink: 0; }
     .details__label {
       font-size: 0.65rem;
       letter-spacing: 0.3em;
