@@ -407,7 +407,105 @@
 </footer>
 
   <script>
-    // JS goes here in Task 4
+    const btnYes       = document.getElementById('btnYes');
+    const btnNo        = document.getElementById('btnNo');
+    const attendingInput = document.getElementById('attending');
+    const guestGroup   = document.getElementById('guestGroup');
+    const guestsInput  = document.getElementById('guests');
+    const form         = document.getElementById('rsvpForm');
+    const submitBtn    = document.getElementById('submitBtn');
+    const formSuccess  = document.getElementById('formSuccess');
+    const formError    = document.getElementById('formError');
+
+    // ── Toggle Yes/No ──
+    function selectAttending(value) {
+      attendingInput.value = value;
+      btnYes.classList.toggle('active', value === 'yes');
+      btnNo.classList.toggle('active',  value === 'no');
+      guestGroup.style.display = value === 'yes' ? 'block' : 'none';
+      if (value === 'no') { guestsInput.value = ''; }
+      document.getElementById('attendingError').style.display = 'none';
+    }
+
+    btnYes.addEventListener('click', () => selectAttending('yes'));
+    btnNo.addEventListener('click',  () => selectAttending('no'));
+
+    // ── Validation ──
+    function validate() {
+      let valid = true;
+
+      const name = document.getElementById('name').value.trim();
+      const nameError = document.getElementById('nameError');
+      if (!name) {
+        nameError.style.display = 'block';
+        valid = false;
+      } else {
+        nameError.style.display = 'none';
+      }
+
+      const attending = attendingInput.value;
+      const attendingError = document.getElementById('attendingError');
+      if (!attending) {
+        attendingError.style.display = 'block';
+        valid = false;
+      } else {
+        attendingError.style.display = 'none';
+      }
+
+      const guestsError = document.getElementById('guestsError');
+      if (attending === 'yes') {
+        const g = parseInt(guestsInput.value, 10);
+        if (!guestsInput.value || isNaN(g) || g < 1 || g > 10) {
+          guestsError.style.display = 'block';
+          valid = false;
+        } else {
+          guestsError.style.display = 'none';
+        }
+      } else {
+        guestsError.style.display = 'none';
+      }
+
+      return valid;
+    }
+
+    // ── Submission ──
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      formSuccess.style.display = 'none';
+      formError.style.display   = 'none';
+
+      if (!validate()) return;
+
+      submitBtn.disabled    = true;
+      submitBtn.textContent = 'Sending…';
+
+      try {
+        const data = new FormData(form);
+        const res  = await fetch(form.action, {
+          method:  'POST',
+          body:    data,
+          headers: { Accept: 'application/json' }
+        });
+
+        if (res.ok) {
+          form.reset();
+          attendingInput.value = '';
+          btnYes.classList.remove('active');
+          btnNo.classList.remove('active');
+          guestGroup.style.display = 'none';
+          formSuccess.style.display = 'block';
+          submitBtn.style.display   = 'none';
+        } else {
+          formError.style.display = 'block';
+          submitBtn.disabled    = false;
+          submitBtn.textContent = 'Send RSVP';
+        }
+      } catch {
+        formError.style.display = 'block';
+        submitBtn.disabled    = false;
+        submitBtn.textContent = 'Send RSVP';
+      }
+    });
   </script>
 </body>
 </html>
