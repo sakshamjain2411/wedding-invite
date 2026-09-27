@@ -138,11 +138,29 @@
 
     /* ── OUR STORY ── */
     .story {
-      max-width: 680px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 5rem 2rem 4rem;
-      text-align: center;
       border-bottom: 1px solid var(--border);
+    }
+    .story__photo {
+      position: relative;
+      overflow: hidden;
+      min-height: 500px;
+    }
+    .story__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .story__content {
+      padding: 5rem 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
     .story__label {
       display: block;
@@ -155,7 +173,7 @@
     }
     .story__heading {
       font-family: var(--font-serif);
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-size: clamp(2rem, 3vw, 2.75rem);
       font-weight: 600;
       color: var(--maroon);
       letter-spacing: 0.04em;
@@ -164,10 +182,21 @@
     }
     .story__text {
       font-family: var(--font-serif);
-      font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+      font-size: clamp(1.05rem, 1.5vw, 1.2rem);
       font-weight: 400;
       color: var(--text);
       line-height: 2;
+    }
+    @media (max-width: 768px) {
+      .story {
+        grid-template-columns: 1fr;
+      }
+      .story__photo {
+        min-height: 300px;
+      }
+      .story__content {
+        padding: 3rem 1.75rem;
+      }
     }
 
     /* ── DETAILS ── */
@@ -485,11 +514,17 @@
 
 <!-- OUR STORY -->
 <section class="story">
-  <span class="story__label">Our Story</span>
-  <h2 class="story__heading">Where It All Began</h2>
-  <p class="story__text">
-    Five and a half years ago, two colleagues crossed paths at the office — and what started as a professional hello quietly grew into something far more beautiful. Through late evenings, shared chai, and countless conversations, a friendship turned into a love story neither of us had planned. Today, we stand at the beginning of our greatest chapter yet, and we cannot imagine it without each of you by our side.
-  </p>
+  <div class="story__photo">
+    <!-- TODO: Replace src with a real couple photo -->
+    <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=80" alt="Saksham and Vasundhara" class="story__img" />
+  </div>
+  <div class="story__content">
+    <span class="story__label">Our Story</span>
+    <h2 class="story__heading">Where It All Began</h2>
+    <p class="story__text">
+      Five and a half years ago, two colleagues crossed paths at the office — and what started as a professional hello quietly grew into something far more beautiful. Through late evenings, shared chai, and countless conversations, a friendship turned into a love story neither of us had planned. Today, we stand at the beginning of our greatest chapter yet, and we cannot imagine it without each of you by our side.
+    </p>
+  </div>
 </section>
 
 <!-- EVENT DETAILS -->
