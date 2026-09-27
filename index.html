@@ -46,29 +46,33 @@
       object-position: center top;
       filter: grayscale(1) brightness(0.75);
     }
-    /* Names overlay — top-left, large */
+    /* Names overlay — centered, stacked */
     .hero__names {
       position: absolute;
-      top: 6%;
+      top: 50%;
+      transform: translateY(-50%);
       left: 4%;
       right: 4%;
+      text-align: center;
     }
-    .hero__names h1 {
+    .hero__name {
       font-family: var(--font-serif);
       font-size: clamp(3.5rem, 11vw, 9rem);
-      font-weight: 300;
+      font-weight: 600;
       color: #eeede7;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.06em;
       line-height: 1;
       text-transform: uppercase;
     }
-    .hero__names h1 .amp {
+    .hero__amp {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 5vw, 4rem);
       font-style: italic;
-      text-transform: none;
-      font-size: 0.85em;
+      font-weight: 300;
+      color: rgba(238,237,231,0.8);
+      line-height: 1.4;
       letter-spacing: 0;
     }
-    /* Date bottom-left, hashtag bottom-right */
     .hero__bottom {
       position: absolute;
       bottom: 5%;
@@ -290,7 +294,7 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
-      .hero__names h1 { font-size: clamp(2.8rem, 14vw, 5rem); }
+      .hero__name { font-size: clamp(2.8rem, 14vw, 5rem); }
       .details { flex-direction: column; gap: 2rem; padding: 3rem 1.5rem; }
       .details__divider { display: none; }
       .rsvp__form { padding: 1.75rem 1.25rem; }
@@ -306,8 +310,9 @@
   <!-- TODO: Replace src with real couple photo -->
   <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&q=80" alt="Saksham and Vasundhara" class="hero__img" />
   <div class="hero__names">
-    <h1>Saksham <span class="amp">&amp;</span> Vasundhara</h1>
-    <div class="hero__line"></div>
+    <h1 class="hero__name">Saksham</h1>
+    <p class="hero__amp">&amp;</p>
+    <h1 class="hero__name">Vasundhara</h1>
   </div>
   <div class="hero__bottom">
     <span class="hero__date">22nd &amp; 23rd December 2026</span>
