@@ -83,14 +83,15 @@
       letter-spacing: 0.1em;
       line-height: 1.1;
     }
-    .names__amp {
+    .names__sep {
       font-family: var(--font-serif);
       font-size: clamp(1.5rem, 4vw, 2.5rem);
       font-style: italic;
       color: var(--champagne);
-      margin: 0.5rem 0;
+      display: block;
+      margin: 0.25rem 0;
     }
-    .diamond {
+    .names__diamond {
       color: var(--gold);
       font-size: 1.25rem;
       margin: 0.75rem 0;
@@ -139,17 +140,15 @@
   <!-- TODO: Replace src with real couple photo -->
   <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&q=80" alt="Saksham and Vasundhara" class="hero__img" />
   <div class="hero__overlay">
-    <p class="hero__label">Save the Date</p>
+    <h2 class="hero__label">Save the Date</h2>
   </div>
 </section>
 
 <!-- NAMES -->
 <section class="names">
-  <span class="diamond">✦</span>
-  <h1 class="names__heading">Saksham</h1>
-  <p class="names__amp">&amp;</p>
-  <h1 class="names__heading">Vasundhara</h1>
-  <span class="diamond">✦</span>
+  <span class="names__diamond">✦</span>
+  <h1 class="names__heading">Saksham <span class="names__sep">&amp;</span> Vasundhara</h1>
+  <span class="names__diamond">✦</span>
 </section>
 
 <!-- EVENT DETAILS -->
@@ -158,7 +157,7 @@
     <p class="details__label">The Celebration</p>
     <p class="details__value">22nd &amp; 23rd December 2026</p>
   </div>
-  <div class="details__divider">✦</div>
+  <span class="details__divider" aria-hidden="true">✦</span>
   <div class="details__item">
     <p class="details__label">Venue</p>
     <p class="details__value">Shree Rajlaxmi Heaven's</p>
