@@ -129,6 +129,8 @@
     .story {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      padding: 5rem;
       max-width: 1100px;
       margin: 0 auto;
       border-bottom: 1px solid var(--border);
@@ -141,13 +143,11 @@
     .story__img {
       width: 100%;
       height: 100%;
-      padding: 5rem 0rem 5rem 5rem;
       object-fit: cover;
       object-position: center top;
       display: block;
     }
     .story__content {
-      padding: 5rem 3.5rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -192,20 +192,10 @@
 
     /* ── SCHEDULE ── */
     .schedule-wrap {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      max-width: 1100px;
+      max-width: 720px;
       margin: 0 auto;
+      padding: 5rem 2rem;
       border-bottom: 1px solid var(--border);
-    }
-    .schedule-wrap__left {
-      padding: 4rem 3.5rem 4rem 4rem;
-      border-right: 1px solid var(--border);
-    }
-    .schedule-wrap__right {
-      padding: 4rem 4rem 4rem 3.5rem;
-      display: flex;
-      flex-direction: column;
     }
     .schedule-wrap__label {
       display: block;
@@ -214,73 +204,63 @@
       letter-spacing: 0.35em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 0.75rem;
+      margin-bottom: 2.5rem;
     }
-    .schedule-wrap__venue-name {
-      font-family: var(--font-serif);
-      font-size: clamp(1.4rem, 2.5vw, 2rem);
-      font-weight: 600;
-      color: var(--maroon);
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
+    .schedule__day {
+      margin-bottom: 3rem;
     }
-    .schedule-wrap__map {
-      flex: 1;
-      min-height: 280px;
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      overflow: hidden;
-    }
-    .schedule {
-      display: flex;
-      gap: 0;
-    }
-    .schedule__day { flex: 1; padding: 0 2rem; }
-    .schedule__day:first-child {
-      padding-left: 0;
-      border-right: 1px solid var(--border-dark);
-    }
-    .schedule__day:last-child { padding-right: 0; }
     .schedule__date {
       font-family: var(--font-serif);
-      font-size: 1.1rem;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
       font-weight: 600;
-      letter-spacing: 0.05em;
       color: var(--maroon);
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.2rem;
+      line-height: 1.1;
     }
     .schedule__date-sub {
+      display: block;
       font-size: 0.6rem;
       letter-spacing: 0.3em;
       text-transform: uppercase;
       color: var(--gold);
       font-weight: 500;
-      margin-bottom: 1.5rem;
-      display: block;
+      margin-bottom: 1.25rem;
     }
     .schedule__list { list-style: none; }
     .schedule__item {
       display: flex;
       align-items: baseline;
-      gap: 1.5rem;
-      padding: 0.8rem 0;
-      border-bottom: 1px solid rgba(184,134,11,0.15);
+      gap: 2rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(184,134,11,0.18);
     }
     .schedule__item:last-child { border-bottom: none; }
     .schedule__time {
       font-family: var(--font-sans);
-      font-size: 0.68rem;
+      font-size: 0.72rem;
       font-weight: 500;
       letter-spacing: 0.05em;
       color: var(--gold);
       white-space: nowrap;
-      min-width: 65px;
+      min-width: 80px;
     }
     .schedule__event {
       font-family: var(--font-serif);
-      font-size: 1.15rem;
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
       font-weight: 400;
       color: var(--text);
+    }
+    .schedule-wrap__map {
+      margin-top: 3rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--border);
+    }
+    .schedule-wrap__map-frame {
+      height: 320px;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+      margin-top: 1rem;
     }
 
     /* ── QUOTE ── */
@@ -462,13 +442,7 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       .hero__name { font-size: clamp(2.8rem, 14vw, 5rem); }
-      .schedule-wrap { grid-template-columns: 1fr; }
-      .schedule-wrap__left { padding: 3rem 1.75rem; border-right: none; border-bottom: 1px solid var(--border); }
-      .schedule-wrap__right { padding: 3rem 1.75rem; }
-      .schedule-wrap__map { min-height: 240px; }
-      .schedule { flex-direction: column; gap: 2.5rem; }
-      .schedule__day { padding: 0 !important; border-right: none !important; }
-      .schedule__day:first-child { border-bottom: 1px solid var(--border); padding-bottom: 2.5rem !important; }
+      .schedule-wrap { padding: 3rem 1.25rem; }
       .rsvp__form { padding: 1.75rem 1.25rem; }
       .toggle-group { flex-direction: column; }
       .toggle-btn { width: 100%; }
@@ -513,58 +487,55 @@
 
 
 <!-- SCHEDULE -->
+<!-- SCHEDULE -->
 <section class="schedule-wrap">
-  <div class="schedule-wrap__left">
-    <span class="schedule-wrap__label">Order of Celebrations</span>
-    <div class="schedule">
-      <div class="schedule__day">
-        <h3 class="schedule__date">22nd December</h3>
-        <span class="schedule__date-sub">Day One</span>
-        <ul class="schedule__list">
-          <li class="schedule__item">
-            <span class="schedule__time">11:00 AM</span>
-            <span class="schedule__event">Haldi</span>
-          </li>
-          <li class="schedule__item">
-            <span class="schedule__time">8:00 PM</span>
-            <span class="schedule__event">Sangeet</span>
-          </li>
-        </ul>
-      </div>
-      <div class="schedule__divider" aria-hidden="true"></div>
-      <div class="schedule__day">
-        <h3 class="schedule__date">23rd December</h3>
-        <span class="schedule__date-sub">Day Two</span>
-        <ul class="schedule__list">
-          <li class="schedule__item">
-            <span class="schedule__time">11:00 AM</span>
-            <span class="schedule__event">Barat</span>
-          </li>
-          <li class="schedule__item">
-            <span class="schedule__time">1:00 PM</span>
-            <span class="schedule__event">Lunch</span>
-          </li>
-          <li class="schedule__item">
-            <span class="schedule__time">4:00 PM</span>
-            <span class="schedule__event">Pheras</span>
-          </li>
-        </ul>
-      </div>
-    </div>
+  <span class="schedule-wrap__label">Order of Celebrations</span>
+
+  <div class="schedule__day">
+    <h3 class="schedule__date">22nd December</h3>
+    <span class="schedule__date-sub">Day One</span>
+    <ul class="schedule__list">
+      <li class="schedule__item">
+        <span class="schedule__time">11:00 AM</span>
+        <span class="schedule__event">Haldi</span>
+      </li>
+      <li class="schedule__item">
+        <span class="schedule__time">1:00 PM</span>
+        <span class="schedule__event">Lunch</span>
+      </li>
+      <li class="schedule__item">
+        <span class="schedule__time">8:00 PM</span>
+        <span class="schedule__event">Sangeet &amp; Dinner</span>
+      </li>
+    </ul>
   </div>
-  <div class="schedule-wrap__right">
-    <span class="schedule-wrap__label">Venue</span>
-    <p class="schedule-wrap__venue-name">Shree Rajlaxmi Heaven's</p>
-    <div class="schedule-wrap__map">
+
+  <div class="schedule__day">
+    <h3 class="schedule__date">23rd December</h3>
+    <span class="schedule__date-sub">Day Two</span>
+    <ul class="schedule__list">
+      <li class="schedule__item">
+        <span class="schedule__time">11:00 AM</span>
+        <span class="schedule__event">Barat</span>
+      </li>
+      <li class="schedule__item">
+        <span class="schedule__time">1:00 PM</span>
+        <span class="schedule__event">Lunch</span>
+      </li>
+      <li class="schedule__item">
+        <span class="schedule__time">4:00 PM</span>
+        <span class="schedule__event">Pheras</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="schedule-wrap__map">
+    <span class="schedule-wrap__label">Venue — Shree Rajlaxmi Heaven's</span>
+    <div class="schedule-wrap__map-frame">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3555.534464517292!2d75.6873018!3d26.981638000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396c4d6bd1d09263%3A0x23f4a2d48d1841a!2sShree%20Rajlaxmi%20Heaven's!5e0!3m2!1sen!2sin!4v1790491455483!5m2!1sen!2sin"
-        width="100%"
-        height="100%"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="strict-origin-when-cross-origin"
-        title="Shree Rajlaxmi Heaven's location"
+        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin" title="Shree Rajlaxmi Heaven's location"
       ></iframe>
     </div>
   </div>
