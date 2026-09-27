@@ -416,6 +416,7 @@
     const submitBtn    = document.getElementById('submitBtn');
     const formSuccess  = document.getElementById('formSuccess');
     const formError    = document.getElementById('formError');
+    const attendingError = document.getElementById('attendingError');
 
     // ── Toggle Yes/No ──
     function selectAttending(value) {
@@ -424,7 +425,7 @@
       btnNo.classList.toggle('active',  value === 'no');
       guestGroup.style.display = value === 'yes' ? 'block' : 'none';
       if (value === 'no') { guestsInput.value = ''; }
-      document.getElementById('attendingError').style.display = 'none';
+      attendingError.style.display = 'none';
     }
 
     btnYes.addEventListener('click', () => selectAttending('yes'));
@@ -444,7 +445,6 @@
       }
 
       const attending = attendingInput.value;
-      const attendingError = document.getElementById('attendingError');
       if (!attending) {
         attendingError.style.display = 'block';
         valid = false;
@@ -471,6 +471,7 @@
     // ── Submission ──
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      if (submitBtn.disabled) return;
       formSuccess.style.display = 'none';
       formError.style.display   = 'none';
 
