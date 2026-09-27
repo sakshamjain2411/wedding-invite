@@ -131,6 +131,181 @@
       font-size: 1rem;
       opacity: 0.6;
     }
+
+    /* ── QUOTE ── */
+    .quote {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 4rem 2rem;
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .quote__text {
+      font-family: var(--font-serif);
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.9;
+      margin: 1.5rem 0;
+    }
+
+    /* ── RSVP ── */
+    .rsvp {
+      padding: 4rem 1.5rem 5rem;
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .rsvp__heading {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 400;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      margin-bottom: 0.5rem;
+    }
+    .rsvp__sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+    }
+    .rsvp__form {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2.5rem 2rem;
+      text-align: left;
+    }
+    .form-group {
+      margin-bottom: 1.75rem;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+    .form-input {
+      width: 100%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      padding: 0.75rem 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-input:focus { border-color: var(--gold); }
+    .form-input--narrow { width: 120px; }
+    .form-input::placeholder { color: rgba(245,240,232,0.3); }
+
+    /* Toggle buttons */
+    .toggle-group {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .toggle-btn {
+      flex: 1;
+      min-width: 140px;
+      padding: 0.75rem 1rem;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      color: var(--text-muted);
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .toggle-btn:hover { border-color: var(--gold); color: var(--champagne); }
+    .toggle-btn.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--navy);
+      font-weight: 400;
+    }
+
+    /* Errors */
+    .form-error {
+      display: none;
+      font-size: 0.75rem;
+      color: #e88;
+      margin-top: 0.4rem;
+    }
+    .form-error--submit {
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    /* Success */
+    .form-success {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--champagne);
+      text-align: center;
+      margin-top: 1.5rem;
+      line-height: 1.8;
+    }
+
+    /* Submit button */
+    .submit-btn {
+      width: 100%;
+      padding: 1rem;
+      background: transparent;
+      border: 1px solid var(--gold);
+      border-radius: 2px;
+      color: var(--gold);
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.25s;
+      margin-top: 0.5rem;
+    }
+    .submit-btn:hover {
+      background: var(--gold);
+      color: var(--navy);
+    }
+    .submit-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1.5rem 4rem;
+      border-top: 1px solid var(--border);
+      gap: 0.5rem;
+      text-align: center;
+    }
+    .footer__text {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+    }
+    .footer__family {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      color: var(--champagne);
+      letter-spacing: 0.05em;
+    }
   </style>
 </head>
 <body>
@@ -163,6 +338,64 @@
     <p class="details__value">Shree Rajlaxmi Heaven's</p>
   </div>
 </section>
+
+<!-- QUOTE -->
+<section class="quote">
+  <span class="names__diamond" aria-hidden="true">✦</span>
+  <blockquote class="quote__text">
+    To everyone who has loved us, raised us, guided us and celebrated us along the way — this day carries a little piece of each of you.
+  </blockquote>
+  <span class="names__diamond" aria-hidden="true">✦</span>
+</section>
+
+<!-- RSVP -->
+<section class="rsvp" id="rsvp">
+  <h2 class="rsvp__heading">Kindly RSVP</h2>
+  <p class="rsvp__sub">Please let us know by 1st December 2026</p>
+
+  <form class="rsvp__form" id="rsvpForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+    <!-- TODO: Replace YOUR_FORM_ID with your Formspree form ID from formspree.io -->
+
+    <div class="form-group">
+      <label class="form-label" for="name">Full Name</label>
+      <input class="form-input" type="text" id="name" name="name" placeholder="Your full name" required />
+      <span class="form-error" id="nameError">Please enter your name.</span>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Will you be attending?</label>
+      <div class="toggle-group">
+        <button type="button" class="toggle-btn" id="btnYes" data-value="yes">Joyfully Accept</button>
+        <button type="button" class="toggle-btn" id="btnNo"  data-value="no">Regretfully Decline</button>
+      </div>
+      <input type="hidden" id="attending" name="attending" value="" />
+      <span class="form-error" id="attendingError">Please select an option.</span>
+    </div>
+
+    <div class="form-group" id="guestGroup" style="display:none">
+      <label class="form-label" for="guests">Number of Guests (including yourself)</label>
+      <input class="form-input form-input--narrow" type="number" id="guests" name="guests" min="1" max="10" placeholder="1" />
+      <span class="form-error" id="guestsError">Please enter the number of guests (1–10).</span>
+    </div>
+
+    <button type="submit" class="submit-btn" id="submitBtn">Send RSVP</button>
+
+    <p class="form-success" id="formSuccess" style="display:none">
+      ✦ Thank you! Your RSVP has been received. We look forward to celebrating with you.
+    </p>
+    <p class="form-error form-error--submit" id="formError" style="display:none">
+      Something went wrong. Please try again or contact us directly.
+    </p>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <span class="names__diamond" aria-hidden="true">✦</span>
+  <p class="footer__text">With love &amp; joy,</p>
+  <p class="footer__family">The Families of Saksham &amp; Vasundhara</p>
+  <span class="names__diamond" aria-hidden="true">✦</span>
+</footer>
 
   <script>
     // JS goes here in Task 4
