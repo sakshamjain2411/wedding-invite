@@ -114,11 +114,12 @@
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 2rem;
-      padding: 2rem 1.5rem 4rem;
+      gap: 3rem 5rem;
+      padding: 3rem 2rem 4rem;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
-      margin: 0 2rem;
+      max-width: 720px;
+      margin: 0 auto;
     }
     .details__item {
       text-align: center;
@@ -329,7 +330,6 @@
     @media (max-width: 480px) {
       .details {
         flex-direction: column;
-        margin: 0 1rem;
         gap: 1.5rem;
       }
       .details__divider { display: none; }
