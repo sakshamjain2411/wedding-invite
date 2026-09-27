@@ -188,49 +188,6 @@
       }
     }
 
-    /* ── DETAILS ── */
-    .details {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      gap: 4rem;
-      padding: 4rem 2rem 3.5rem;
-      border-bottom: 1px solid var(--border);
-      position: relative;
-    }
-    .details::before {
-      content: '';
-      position: absolute;
-      bottom: -3px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 5px;
-      background: var(--gold);
-      opacity: 0.4;
-    }
-    .details__item { text-align: center; flex-shrink: 0; }
-    .details__label {
-      font-size: 0.62rem;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-    }
-    .details__value {
-      font-family: var(--font-serif);
-      font-size: clamp(1.3rem, 3vw, 2rem);
-      color: var(--maroon);
-      font-weight: 600;
-      line-height: 1.2;
-    }
-    .details__divider {
-      color: var(--gold);
-      font-size: 1.2rem;
-      opacity: 0.6;
-    }
 
     /* ── SCHEDULE ── */
     .schedule-wrap {
@@ -503,8 +460,6 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       .hero__name { font-size: clamp(2.8rem, 14vw, 5rem); }
-      .details { flex-direction: column; gap: 2rem; padding: 3rem 1.5rem; }
-      .details__divider { display: none; }
       .schedule-wrap { grid-template-columns: 1fr; }
       .schedule-wrap__left { padding: 3rem 1.75rem; border-right: none; border-bottom: 1px solid var(--border); }
       .schedule-wrap__right { padding: 3rem 1.75rem; }
@@ -554,18 +509,6 @@
   </div>
 </section>
 
-<!-- EVENT DETAILS -->
-<section class="details">
-  <div class="details__item">
-    <p class="details__label">The Celebration</p>
-    <p class="details__value">22nd &amp; 23rd December 2026</p>
-  </div>
-  <span class="details__divider" aria-hidden="true">✦</span>
-  <div class="details__item">
-    <p class="details__label">Venue</p>
-    <p class="details__value">Shree Rajlaxmi Heaven's</p>
-  </div>
-</section>
 
 <!-- SCHEDULE -->
 <section class="schedule-wrap">
