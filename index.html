@@ -136,6 +136,40 @@
     /* ── CONTENT AREA ── */
     .content { background: var(--bg); }
 
+    /* ── OUR STORY ── */
+    .story {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .story__label {
+      display: block;
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    .story__heading {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 600;
+      color: var(--maroon);
+      letter-spacing: 0.04em;
+      margin-bottom: 1.75rem;
+      line-height: 1.1;
+    }
+    .story__text {
+      font-family: var(--font-serif);
+      font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 2;
+    }
+
     /* ── DETAILS ── */
     .details {
       display: flex;
@@ -426,348 +460,6 @@
       .toggle-btn { width: 100%; }
     }
   </style>
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: var(--font-sans);
-      font-weight: 300;
-      line-height: 1.7;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      min-height: 560px;
-      overflow: hidden;
-    }
-    .hero__img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      filter: grayscale(1) brightness(0.75);
-    }
-    /* Names overlay — centered, stacked */
-    .hero__names {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 4%;
-      right: 4%;
-      text-align: center;
-    }
-    .hero__name {
-      font-family: var(--font-serif);
-      font-size: clamp(3.5rem, 9vw, 9rem);
-      font-weight: 600;
-      color: #eeede7;
-      letter-spacing: 0.06em;
-      line-height: 1;
-      text-transform: uppercase;
-    }
-    .hero__amp {
-      font-family: var(--font-serif);
-      font-size: clamp(2rem, 5vw, 4rem);
-      font-style: italic;
-      font-weight: 300;
-      color: rgba(238,237,231,0.8);
-      line-height: 1.4;
-      letter-spacing: 0;
-    }
-    .hero__bottom {
-      position: absolute;
-      bottom: 5%;
-      left: 4%;
-      right: 4%;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-    }
-    .hero__date, .hero__tag {
-      font-family: var(--font-sans);
-      font-size: clamp(0.75rem, 1.5vw, 0.9rem);
-      font-weight: 300;
-      color: rgba(238,237,231,0.85);
-      letter-spacing: 0.08em;
-    }
-    /* Thin line under names */
-    .hero__line {
-      width: 340px;
-      max-width: 80%;
-      height: 1px;
-      background: rgba(238,237,231,0.5);
-      margin-top: 0.75rem;
-    }
-
-    /* ── CONTENT AREA (below hero) ── */
-    .content {
-      background: var(--bg);
-    }
-
-    /* ── DETAILS ── */
-    .details {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      gap: 4rem;
-      padding: 5rem 2rem 4rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .details__item { text-align: center; flex-shrink: 0; }
-    .details__label {
-      font-size: 0.65rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 0.5rem;
-    }
-    .details__value {
-      font-family: var(--font-serif);
-      font-size: clamp(1.3rem, 3vw, 2rem);
-      color: var(--text);
-      font-weight: 400;
-      line-height: 1.2;
-    }
-    .details__divider {
-      color: var(--text-muted);
-      font-size: 0.8rem;
-      opacity: 0.5;
-    }
-
-    /* ── QUOTE ── */
-    .quote {
-      max-width: 640px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    .quote__text {
-      font-family: var(--font-serif);
-      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-      font-style: italic;
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.9;
-    }
-
-    /* ── RSVP ── */
-    .rsvp {
-      padding: 4rem 1.5rem 6rem;
-      max-width: 520px;
-      margin: 0 auto;
-      text-align: center;
-      border-top: 1px solid var(--border);
-    }
-    .rsvp__heading {
-      font-family: var(--font-serif);
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 300;
-      color: var(--text);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 0.4rem;
-    }
-    .rsvp__sub {
-      font-size: 0.72rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 2.5rem;
-    }
-    .rsvp__form {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      padding: 2.5rem 2rem;
-      text-align: left;
-    }
-    .form-group { margin-bottom: 1.75rem; }
-    .form-label {
-      display: block;
-      font-size: 0.65rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 0.6rem;
-    }
-    .form-input {
-      width: 100%;
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid var(--border);
-      color: var(--text);
-      font-family: var(--font-sans);
-      font-size: 1rem;
-      font-weight: 300;
-      padding: 0.5rem 0;
-      outline: none;
-      transition: border-color 0.2s;
-      border-radius: 0;
-    }
-    .form-input:focus { border-bottom-color: var(--text); }
-    .form-input--narrow { width: 100px; }
-    .form-input::placeholder { color: rgba(26,26,26,0.3); }
-
-    /* Toggle buttons */
-    .toggle-group { display: flex; gap: 0.75rem; }
-    .toggle-btn {
-      flex: 1;
-      padding: 0.7rem 1rem;
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      font-family: var(--font-sans);
-      font-size: 0.8rem;
-      letter-spacing: 0.08em;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .toggle-btn:hover { border-color: var(--text); color: var(--text); }
-    .toggle-btn.active {
-      background: var(--text);
-      border-color: var(--text);
-      color: var(--bg);
-      font-weight: 400;
-    }
-
-    /* Errors */
-    .form-error {
-      display: none;
-      font-size: 0.72rem;
-      color: var(--error);
-      margin-top: 0.4rem;
-    }
-    .form-error--submit { margin-top: 1rem; text-align: center; }
-
-    /* Success */
-    .form-success {
-      font-family: var(--font-serif);
-      font-size: 1.1rem;
-      font-style: italic;
-      color: var(--text-muted);
-      text-align: center;
-      margin-top: 1.5rem;
-      line-height: 1.8;
-    }
-
-    /* Submit button */
-    .submit-btn {
-      width: 100%;
-      padding: 0.9rem;
-      background: var(--text);
-      border: 1px solid var(--text);
-      color: var(--bg);
-      font-family: var(--font-sans);
-      font-size: 0.72rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: all 0.25s;
-      margin-top: 0.5rem;
-    }
-    .submit-btn:hover { background: transparent; color: var(--text); }
-    .submit-btn:disabled { opacity: 0.4; cursor: not-allowed; }
-
-    /* ── FOOTER ── */
-    .footer {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 3rem 1.5rem 4rem;
-      border-top: 1px solid var(--border);
-      gap: 0.4rem;
-      text-align: center;
-    }
-    .footer__text {
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: 1rem;
-      color: var(--text-muted);
-    }
-    .footer__family {
-      font-family: var(--font-serif);
-      font-size: 1.2rem;
-      color: var(--text);
-      letter-spacing: 0.05em;
-    }
-
-    /* ── SCHEDULE ── */
-    .schedule {
-      display: flex;
-      gap: 0;
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .schedule__day {
-      flex: 1;
-      padding: 0 2.5rem;
-    }
-    .schedule__day:first-child {
-      padding-left: 0;
-      border-right: 1px solid var(--border);
-    }
-    .schedule__day:last-child {
-      padding-right: 0;
-    }
-    .schedule__date {
-      font-family: var(--font-sans);
-      font-size: 0.65rem;
-      font-weight: 500;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 1.5rem;
-    }
-    .schedule__list {
-      list-style: none;
-    }
-    .schedule__item {
-      display: flex;
-      align-items: baseline;
-      gap: 2rem;
-      padding: 0.85rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .schedule__item:last-child {
-      border-bottom: none;
-    }
-    .schedule__time {
-      font-family: var(--font-sans);
-      font-size: 0.72rem;
-      font-weight: 400;
-      letter-spacing: 0.05em;
-      color: var(--text-muted);
-      white-space: nowrap;
-      min-width: 70px;
-    }
-    .schedule__event {
-      font-family: var(--font-serif);
-      font-size: 1.15rem;
-      font-weight: 400;
-      color: var(--text);
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 600px) {
-      .hero__name { font-size: clamp(2.8rem, 14vw, 5rem); }
-      .details { flex-direction: column; gap: 2rem; padding: 3rem 1.5rem; }
-      .details__divider { display: none; }
-      .schedule { flex-direction: column; gap: 2.5rem; }
-      .schedule__day { padding: 0 !important; border-right: none !important; }
-      .schedule__day:first-child { border-bottom: 1px solid var(--border); padding-bottom: 2.5rem !important; }
-      .rsvp__form { padding: 1.75rem 1.25rem; }
-      .toggle-group { flex-direction: column; }
-      .toggle-btn { width: 100%; }
-    }
-  </style>
 </head>
 <body>
 
@@ -790,6 +482,15 @@
 <div class="ornament-band" aria-hidden="true">✦ &nbsp; ✦ &nbsp; ✦</div>
 
 <div class="content">
+
+<!-- OUR STORY -->
+<section class="story">
+  <span class="story__label">Our Story</span>
+  <h2 class="story__heading">Where It All Began</h2>
+  <p class="story__text">
+    Five and a half years ago, two colleagues crossed paths at the office — and what started as a professional hello quietly grew into something far more beautiful. Through late evenings, shared chai, and countless conversations, a friendship turned into a love story neither of us had planned. Today, we stand at the beginning of our greatest chapter yet, and we cannot imagine it without each of you by our side.
+  </p>
+</section>
 
 <!-- EVENT DETAILS -->
 <section class="details">
