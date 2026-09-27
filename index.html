@@ -9,16 +9,423 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg:         #eeede7;
-      --text:       #1a1a1a;
-      --text-muted: #888880;
-      --accent:     #1a1a1a;
-      --border:     rgba(26,26,26,0.15);
-      --card-bg:    rgba(26,26,26,0.04);
-      --error:      #b94040;
-      --font-serif: 'Cormorant Garamond', Georgia, serif;
-      --font-sans:  'Plus Jakarta Sans', Arial, sans-serif;
+      --bg:           #faf7f2;
+      --bg-deep:      #f3ede3;
+      --maroon:       #6b1a1a;
+      --maroon-light: #8b2e2e;
+      --gold:         #b8860b;
+      --gold-light:   #d4a843;
+      --text:         #2a1a0e;
+      --text-muted:   #8a7060;
+      --border:       rgba(184,134,11,0.25);
+      --border-dark:  rgba(107,26,26,0.2);
+      --card-bg:      rgba(184,134,11,0.06);
+      --error:        #b94040;
+      --font-serif:   'Cormorant Garamond', Georgia, serif;
+      --font-sans:    'Plus Jakarta Sans', Arial, sans-serif;
     }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 560px;
+      overflow: hidden;
+    }
+    .hero__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(0.3) brightness(0.6) sepia(0.3);
+    }
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(42,10,10,0.35) 0%, rgba(42,10,10,0.65) 100%);
+    }
+    .hero__names {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 4%;
+      right: 4%;
+      text-align: center;
+    }
+    /* Decorative top line */
+    .hero__names::before {
+      content: '— ✦ ✦ ✦ —';
+      display: block;
+      font-family: var(--font-serif);
+      font-size: 0.9rem;
+      color: var(--gold-light);
+      letter-spacing: 0.4em;
+      margin-bottom: 1.2rem;
+      opacity: 0.85;
+    }
+    .hero__names::after {
+      content: '— ✦ ✦ ✦ —';
+      display: block;
+      font-family: var(--font-serif);
+      font-size: 0.9rem;
+      color: var(--gold-light);
+      letter-spacing: 0.4em;
+      margin-top: 1.2rem;
+      opacity: 0.85;
+    }
+    .hero__name {
+      font-family: var(--font-serif);
+      font-size: clamp(3.5rem, 9vw, 9rem);
+      font-weight: 600;
+      color: #faf7f2;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+    .hero__amp {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 4vw, 3.5rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--gold-light);
+      line-height: 1.6;
+      letter-spacing: 0.1em;
+    }
+    .hero__bottom {
+      position: absolute;
+      bottom: 5%;
+      left: 4%;
+      right: 4%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .hero__date, .hero__tag {
+      font-family: var(--font-sans);
+      font-size: clamp(0.7rem, 1.4vw, 0.85rem);
+      font-weight: 300;
+      color: rgba(250,247,242,0.8);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* ── ORNAMENTAL BORDER BAND ── */
+    .ornament-band {
+      background: var(--maroon);
+      padding: 0.6rem 0;
+      text-align: center;
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      color: var(--gold-light);
+      letter-spacing: 0.6em;
+      opacity: 0.9;
+    }
+
+    /* ── CONTENT AREA ── */
+    .content { background: var(--bg); }
+
+    /* ── DETAILS ── */
+    .details {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 4rem;
+      padding: 4rem 2rem 3.5rem;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .details::before {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 5px;
+      background: var(--gold);
+      opacity: 0.4;
+    }
+    .details__item { text-align: center; flex-shrink: 0; }
+    .details__label {
+      font-size: 0.62rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    .details__value {
+      font-family: var(--font-serif);
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      color: var(--maroon);
+      font-weight: 600;
+      line-height: 1.2;
+    }
+    .details__divider {
+      color: var(--gold);
+      font-size: 1.2rem;
+      opacity: 0.6;
+    }
+
+    /* ── SCHEDULE ── */
+    .schedule {
+      display: flex;
+      gap: 0;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .schedule__day { flex: 1; padding: 0 2.5rem; }
+    .schedule__day:first-child {
+      padding-left: 0;
+      border-right: 1px solid var(--border-dark);
+    }
+    .schedule__day:last-child { padding-right: 0; }
+    .schedule__date {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--maroon);
+      margin-bottom: 0.25rem;
+    }
+    .schedule__date-sub {
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+    .schedule__list { list-style: none; }
+    .schedule__item {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(184,134,11,0.15);
+    }
+    .schedule__item:last-child { border-bottom: none; }
+    .schedule__time {
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--gold);
+      white-space: nowrap;
+      min-width: 65px;
+    }
+    .schedule__event {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+
+    /* ── QUOTE ── */
+    .quote {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .quote__ornament {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      color: var(--gold);
+      letter-spacing: 0.3em;
+      display: block;
+      margin-bottom: 1.5rem;
+      opacity: 0.7;
+    }
+    .quote__text {
+      font-family: var(--font-serif);
+      font-size: clamp(1.15rem, 2.5vw, 1.55rem);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--maroon-light);
+      line-height: 2;
+    }
+
+    /* ── RSVP ── */
+    .rsvp {
+      padding: 4rem 1.5rem 5rem;
+      max-width: 520px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .rsvp__heading {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 600;
+      color: var(--maroon);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+    .rsvp__sub {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2.5rem;
+      font-weight: 500;
+    }
+    .rsvp__form {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 2.5rem 2rem;
+      text-align: left;
+    }
+    .form-group { margin-bottom: 1.75rem; }
+    .form-label {
+      display: block;
+      font-size: 0.62rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+      font-weight: 500;
+    }
+    .form-input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--border-dark);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 300;
+      padding: 0.5rem 0;
+      outline: none;
+      transition: border-color 0.2s;
+      border-radius: 0;
+    }
+    .form-input:focus { border-bottom-color: var(--gold); }
+    .form-input--narrow { width: 100px; }
+    .form-input::placeholder { color: rgba(42,26,14,0.3); }
+
+    /* Toggle buttons */
+    .toggle-group { display: flex; gap: 0.75rem; }
+    .toggle-btn {
+      flex: 1;
+      padding: 0.7rem 1rem;
+      background: transparent;
+      border: 1px solid var(--border-dark);
+      color: var(--text-muted);
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .toggle-btn:hover { border-color: var(--maroon); color: var(--maroon); }
+    .toggle-btn.active {
+      background: var(--maroon);
+      border-color: var(--maroon);
+      color: var(--bg);
+      font-weight: 400;
+    }
+
+    /* Errors */
+    .form-error {
+      display: none;
+      font-size: 0.72rem;
+      color: var(--error);
+      margin-top: 0.4rem;
+    }
+    .form-error--submit { margin-top: 1rem; text-align: center; }
+
+    /* Success */
+    .form-success {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--maroon-light);
+      text-align: center;
+      margin-top: 1.5rem;
+      line-height: 1.8;
+    }
+
+    /* Submit button */
+    .submit-btn {
+      width: 100%;
+      padding: 0.9rem;
+      background: var(--maroon);
+      border: 1px solid var(--maroon);
+      color: var(--bg);
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.25s;
+      margin-top: 0.5rem;
+    }
+    .submit-btn:hover { background: transparent; color: var(--maroon); }
+    .submit-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--maroon);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1.5rem 3.5rem;
+      gap: 0.5rem;
+      text-align: center;
+    }
+    .footer__ornament {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      color: var(--gold-light);
+      letter-spacing: 0.4em;
+      margin-bottom: 0.5rem;
+      opacity: 0.8;
+    }
+    .footer__text {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1rem;
+      color: rgba(250,247,242,0.7);
+    }
+    .footer__family {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #faf7f2;
+      letter-spacing: 0.08em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .hero__name { font-size: clamp(2.8rem, 14vw, 5rem); }
+      .details { flex-direction: column; gap: 2rem; padding: 3rem 1.5rem; }
+      .details__divider { display: none; }
+      .schedule { flex-direction: column; gap: 2.5rem; }
+      .schedule__day { padding: 0 !important; border-right: none !important; }
+      .schedule__day:first-child { border-bottom: 1px solid var(--border); padding-bottom: 2.5rem !important; }
+      .rsvp__form { padding: 1.75rem 1.25rem; }
+      .toggle-group { flex-direction: column; }
+      .toggle-btn { width: 100%; }
+    }
+  </style>
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -368,6 +775,7 @@
 <section class="hero">
   <!-- TODO: Replace src with real couple photo -->
   <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&q=80" alt="Saksham and Vasundhara" class="hero__img" />
+  <div class="hero__overlay"></div>
   <div class="hero__names">
     <h1 class="hero__name">Saksham</h1>
     <p class="hero__amp">&amp;</p>
@@ -378,6 +786,8 @@
     <span class="hero__tag">Shree Rajlaxmi Heaven's</span>
   </div>
 </section>
+
+<div class="ornament-band" aria-hidden="true">✦ &nbsp; ✦ &nbsp; ✦</div>
 
 <div class="content">
 
@@ -398,6 +808,7 @@
 <section class="schedule">
   <div class="schedule__day">
     <h3 class="schedule__date">22nd December</h3>
+    <span class="schedule__date-sub">Day One</span>
     <ul class="schedule__list">
       <li class="schedule__item">
         <span class="schedule__time">11:00 AM</span>
@@ -412,6 +823,7 @@
   <div class="schedule__divider" aria-hidden="true"></div>
   <div class="schedule__day">
     <h3 class="schedule__date">23rd December</h3>
+    <span class="schedule__date-sub">Day Two</span>
     <ul class="schedule__list">
       <li class="schedule__item">
         <span class="schedule__time">11:00 AM</span>
@@ -431,6 +843,7 @@
 
 <!-- QUOTE -->
 <section class="quote">
+  <span class="quote__ornament">✦ ✦ ✦</span>
   <blockquote class="quote__text">
     The best things in life are better together — and we are grateful you are part of ours.
   </blockquote>
@@ -479,6 +892,7 @@
 
 <!-- FOOTER -->
 <footer class="footer">
+  <p class="footer__ornament">✦ &nbsp; ✦ &nbsp; ✦</p>
   <p class="footer__text">With love &amp; joy,</p>
   <p class="footer__family">The Families of Saksham &amp; Vasundhara</p>
 </footer>
