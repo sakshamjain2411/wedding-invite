@@ -2,9 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<!-- This site is hosted on Netlify. Anyone can build and deploy a site
-     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=289fe51d-559e-48c2-9108-75c570aac6fe
-     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="Saksham & Vasundhara are getting married. Join us at Rajlaxmi Heaven's, Greater Noida, 22 to 23 December 2026.">
 <meta property="og:title" content="Saksham & Vasundhara · You're invited">
@@ -13,6 +10,7 @@
 <meta name="theme-color" content="#FBF8F4">
 <style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;padding:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Saksham &amp; Vasundhara Wedding</title>
+<link rel="icon" href="../img/favicon.ico" type="image/x-icon">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+SC:wght@400;500;600&family=Italianno&display=swap">
@@ -179,14 +177,14 @@
       <h2>Schedule of Events</h2>
       <div class="ornament" aria-hidden="true"><span>✦</span></div>
       <div class="events-list" id="events-list">
-        <!-- <article class="event">
+        <article class="event">
           <div class="art-wrap"><img class="wash" src="../img/wash-blush.webp" alt=""><img class="art" src="../img/mehendi.webp" alt="Watercolour of the bride and her friends applying mehendi among marigolds and roses"></div>
           <p class="when">Monday &middot; 14th December 2026</p>
           <h3 class="sheen-text">Mehendi</h3>
           <p class="meta">5:00 PM &middot; Indigo Banquet, Ravaya</p>
           <p class="dress">Dress code: Shades of green <i style="background:#93AE98"></i><i style="background:#C9D8B6"></i></p>
           <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Ravaya%20Banquet%2C%20Sector%20R-4%2C%20Greater%20Noida%2C%20Uttar%20Pradesh%20201310" target="_blank" rel="noopener">Get directions</a>
-        </article> -->
+        </article>
         <article class="event">
           <div class="art-wrap"><img class="wash" src="../img/wash-peach.webp" alt=""><img class="art" src="../img/haldi.webp" alt="Watercolour of the couple at a brass urli with haldi, parasols and marigolds"></div>
           <p class="when">Tuesday &middot; 22nd December 2026</p>
@@ -294,49 +292,6 @@
     </div>
   </section>
 
-  <!-- ================= RSVP ================= -->
-  <section id="rsvp">
-    <img class="wash" src="../img/wash-lavender.webp" alt="" style="left:-16%;top:22%">
-    <img class="wash" src="../img/wash-blush.webp" alt="" style="right:-16%;bottom:8%">
-    <div class="floral flip" style="right:-46px;top:-50px;--dur:8s;--origin:90% 90%" aria-hidden="true"><img src="../img/floral1.webp" alt=""></div>
-    <div class="wrap">
-      <p class="eyebrow">Kindly respond by 30th November 2026</p>
-      <h2>Will you join us?</h2>
-      <div class="rsvp-card" id="rsvp-card">
-        <form id="rsvp-form" novalidate>
-          <span class="mono" aria-hidden="true"></span>
-          <h3>RSVP</h3>
-          <div class="field">
-            <label for="r-name">Full name</label>
-            <input type="text" id="r-name" autocomplete="name" placeholder="Enter your name">
-          </div>
-          <p class="err" id="r-err" role="alert"></p>
-          <div class="field">
-            <span class="lbl">Will you be attending?</span>
-            <div class="seg">
-              <input type="radio" name="attend" id="r-yes" value="yes" checked><label for="r-yes">Joyfully accept</label>
-              <input type="radio" name="attend" id="r-no" value="no"><label for="r-no">Regretfully decline</label>
-            </div>
-          </div>
-          <div id="attend-extra">
-            <div class="field">
-              <span class="lbl">Number of guests</span>
-              <div class="stepper">
-                <button type="button" id="g-minus" aria-label="Fewer guests">−</button>
-                <output id="g-count" aria-live="polite">2</output>
-                <button type="button" id="g-plus" aria-label="More guests">+</button>
-              </div>
-            </div>
-            <div class="field">
-              <span class="lbl">Events you'll be joining</span>
-              <div class="checks" id="r-events"></div>
-            </div>
-          </div>
-          <button class="send" type="submit">Send RSVP</button>
-        </form>
-      </div>
-    </div>
-  </section>
 
   <footer>
     <img class="wash" src="../img/wash-peach.webp" alt="" style="left:50%;top:0;translate:-50% 0">
@@ -536,44 +491,6 @@
   $("#prev").addEventListener("click",()=>go(cur-1)); $("#next").addEventListener("click",()=>go(cur+1));
   syncDots();
 
-  /* ================= Events ================= */
-  const chk=$("#r-events");
-  EVENTS.forEach((ev,i)=>{
-    const l=document.createElement("label");
-    l.innerHTML=`<input type="checkbox" id="ev-${i}" value="${ev.name}" checked> ${ev.name} <span>${ev.short}</span>`;
-    chk.appendChild(l);
-  });
-
-  /* ================= RSVP ================= */
-  let guests=2; const gOut=$("#g-count");
-  $("#g-minus").addEventListener("click",()=>{guests=Math.max(1,guests-1);gOut.textContent=guests;});
-  $("#g-plus").addEventListener("click",()=>{guests=Math.min(10,guests+1);gOut.textContent=guests;});
-  document.querySelectorAll('input[name=attend]').forEach(r=>r.addEventListener("change",()=>{ $("#attend-extra").hidden=$("#r-no").checked; }));
-  const SHEET_URL="https://script.google.com/macros/s/AKfycbxCH1JOnAlk6CNWh6NRT2vTSGle8p8alxItEnPmbgGLcxsn5n4lVDiwrHT-Kh20MZ0A/exec";
-  $("#rsvp-form").addEventListener("submit",async e=>{
-    e.preventDefault();
-    const name=$("#r-name").value.trim();
-    if(!name){$("#r-err").textContent="Please add your name so the family knows who is replying.";$("#r-name").focus();return;}
-    $("#r-err").textContent="";
-    const yes=$("#r-yes").checked;
-    const evs=[...chk.querySelectorAll("input:checked")].map(i=>i.value);
-    const card=$("#rsvp-card");
-    const btn=card.querySelector(".send");
-    btn.disabled=true; btn.textContent="Sending…";
-    try {
-      await fetch(SHEET_URL,{method:"POST",mode:"no-cors",body:JSON.stringify({
-        name,
-        attending: yes?"Yes":"No",
-        guests: yes?guests:0,
-        events: yes?(evs.length?evs.join(", "):"None selected"):"—"
-      })});
-    } catch(_){}
-    card.innerHTML=`<div class="rsvp-done"><span class="mono" style="width:54px" aria-hidden="true"></span>
-      <p class="script">${yes?"See you there!":"You'll be missed"}</p>
-      <p class="sub">${yes?"Thank you, "+esc(name)+". Your RSVP has been shared with the family.":"Thank you for letting us know, "+esc(name)+"."}</p>
-      </div>`;
-    if(yes) confetti(card);
-  });
 
   /* ================= Music ================= */
   const btn=$("#music"), icon=$("#music-icon");
