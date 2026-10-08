@@ -322,7 +322,7 @@
               <span class="lbl">Number of guests</span>
               <div class="stepper">
                 <button type="button" id="g-minus" aria-label="Fewer guests">−</button>
-                <output id="g-count" aria-live="polite">2</output>
+                <output id="g-count" aria-live="polite">1</output>
                 <button type="button" id="g-plus" aria-label="More guests">+</button>
               </div>
             </div>
@@ -545,9 +545,9 @@
   });
 
   /* ================= RSVP ================= */
-  let guests=2; const gOut=$("#g-count");
+  let guests=1; const gOut=$("#g-count");
   $("#g-minus").addEventListener("click",()=>{guests=Math.max(1,guests-1);gOut.textContent=guests;});
-  $("#g-plus").addEventListener("click",()=>{guests=Math.min(10,guests+1);gOut.textContent=guests;});
+  $("#g-plus").addEventListener("click",()=>{guests=Math.min(4,guests+1);gOut.textContent=guests;});
   document.querySelectorAll('input[name=attend]').forEach(r=>r.addEventListener("change",()=>{ $("#attend-extra").hidden=$("#r-no").checked; }));
   const SHEET_URL="https://script.google.com/macros/s/AKfycbxCH1JOnAlk6CNWh6NRT2vTSGle8p8alxItEnPmbgGLcxsn5n4lVDiwrHT-Kh20MZ0A/exec";
   $("#rsvp-form").addEventListener("submit",async e=>{
