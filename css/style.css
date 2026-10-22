@@ -188,6 +188,21 @@ section {
     animation: foil 7s linear infinite
 }
 
+/* ================= Ganesha ================= */
+.ganesha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+.ganesha .eyebrow {
+    margin: 4px 0 0 0;
+    font-size: clamp(8px, 2vw, 12px);
+    text-align: center;
+}
+
 /* ================= Cover ================= */
 #envelope-screen {
     position: fixed;
@@ -750,7 +765,7 @@ section {
     font-size: .3em;
     color: var(--gold);
     vertical-align: middle;
-    margin: 0 .35em
+    margin: 0 0 0 .7em
 }
 
 .scratch-box {
