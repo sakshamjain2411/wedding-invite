@@ -607,7 +607,7 @@
   const keys   = params.getAll("k").flatMap(v => v.split(",").map(s => s.trim()));
   const slugs  = new Set(keys.map(k => KEY_MAP[k]).filter(Boolean));
   document.querySelectorAll(".event[data-event]").forEach(el => {
-    if (slugs.has(el.dataset.event)) el.style.display = "";
+    if (slugs.has(el.dataset.event)) el.style.display = "block";
   });
 })();
 </script>
