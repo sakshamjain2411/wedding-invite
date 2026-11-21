@@ -595,17 +595,9 @@
 
 /* ================= Event visibility ================= */
 (function(){
-  const KEY_MAP = {
-    "31082da7": "haldi",
-    "b9e408e9": "mayra",
-    "7b1777fc": "sangeet",
-    "eccfa3d5": "barat",
-    "37c5189a": "varmala",
-    "f91f87fc": "pheras",
-  };
-  const params = new URLSearchParams(location.search);
-  const keys   = params.getAll("k").flatMap(v => v.split(",").map(s => s.trim()));
-  const slugs  = new Set(keys.map(k => KEY_MAP[k]).filter(Boolean));
+  const CODE_MAP = {hd:"haldi",my:"mayra",sg:"sangeet",br:"barat",vm:"varmala",ph:"pheras"};
+  const k = new URLSearchParams(location.search).get("k") || "";
+  const slugs = new Set((k.match(/.{2}/g)||[]).map(c=>CODE_MAP[c]).filter(Boolean));
   document.querySelectorAll(".event[data-event]").forEach(el => {
     if (slugs.has(el.dataset.event)) el.style.display = "block";
   });
