@@ -592,6 +592,24 @@
     requestAnimationFrame(frame);
   })();
 })();
+
+/* ================= Event visibility ================= */
+(function(){
+  const KEY_MAP = {
+    "haldi-k1":   "haldi",
+    "mayra-k2":   "mayra",
+    "sangeet-k3": "sangeet",
+    "barat-k4":   "barat",
+    "varmala-k5": "varmala",
+    "pheras-k6":  "pheras",
+  };
+  const params = new URLSearchParams(location.search);
+  const keys   = params.getAll("k").flatMap(v => v.split(",").map(s => s.trim()));
+  const slugs  = new Set(keys.map(k => KEY_MAP[k]).filter(Boolean));
+  document.querySelectorAll(".event[data-event]").forEach(el => {
+    if (slugs.has(el.dataset.event)) el.style.display = "";
+  });
+})();
 </script>
 
 </body>
