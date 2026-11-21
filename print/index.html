@@ -15,6 +15,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+SC:wght@400;500;600&family=Italianno&display=swap">
 <link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="style.css">
 
 </head>
 <body>
@@ -24,25 +25,12 @@
   <section class="hero">
     <img class="wash" src="../img/wash-blush.webp" alt="" style="left:-12%;top:30%">
     <img class="wash" src="../img/wash-lavender.webp" alt="" style="right:-14%;top:44%">
+    <img src="../img/ganesha.png" width="120px" alt="" class="ganesha">
     <div class="hero-art"><img id="hero-img" src="../img/hero.webp" alt="Watercolour garden with stone balustrades, floral urns and a lawn leading into the trees" width="2200" height="917"></div>
     <div class="wrap hero-inner">
-      <span class="mono" role="img" aria-label="Saksham and Vasundhara monogram"></span>
+      <div class="spacer"></div>
       <p class="eyebrow">Together with their families</p>
       <h1 class="couple sheen-text">Saksham<span class="weds">weds</span>Vasundhara</h1>
-      <!-- <div class="ornament" aria-hidden="true"><span>✦</span></div> -->
-      <!-- <p class="eyebrow">We are getting married</p> -->
-      <div class="scratch-under">
-        <span class="small">Tuesday - Wednesday</span>
-        <span class="day">22nd - 23rd December 2026</span>
-        <span class="small">Rajlaxmi Heaven's, Jaipur</span>
-      </div>
-      <div class="countdown" aria-label="Countdown to the wedding">
-        <div><b id="cd-d">00</b><span>Days</span></div>
-        <div><b id="cd-h">00</b><span>Hours</span></div>
-        <div><b id="cd-m">00</b><span>Minutes</span></div>
-        <div><b id="cd-s">00</b><span>Seconds</span></div>
-      </div>
-      <a class="cal-link" id="cal-link" target="_blank" rel="noopener">Add to Google Calendar</a>
     </div>
   </section>
 
@@ -77,35 +65,11 @@
     </div>
   </section>
 
-  <!-- ================= Story ================= -->
-  <section id="story">
-    <img class="wash" src="../img/wash-blush2.webp" alt="" style="left:50%;top:18%;translate:-50% 0;width:clamp(320px,80vw,620px)">
-    <div class="wrap">
-      <p class="eyebrow">Some chapters are written by destiny</p>
-      <h2>Our Story</h2>
-      <div class="ornament" aria-hidden="true"><span>✦</span></div>
-      <div class="carousel">
-        <button class="car-btn prev" id="prev" aria-label="Previous photo">‹</button>
-        <div class="track" id="track">
-          <div class="slide"><figure><div class="photo"><img src="../img/story0.webp" alt="We first met" style="object-position:50% 62%"></div><figcaption>We First Met</figcaption></figure></div>
-          <div class="slide"><figure><div class="photo"><img src="../img/story1.webp" alt="Then we clicked" style="object-position:50% 62%"></div><figcaption>Then We Clicked</figcaption></figure></div>
-          <div class="slide"><figure><div class="photo"><img src="../img/story2.webp" alt="Our first official date" style="object-position:50% 45%"></div><figcaption>We Made Memories</figcaption></figure></div>
-          <div class="slide"><figure><div class="photo"><img src="../img/story3.webp" alt="She said yes" style="object-position:50% 60%"></div><figcaption>She Said Yes</figcaption></figure></div>
-          <div class="slide"><figure><div class="photo"><img src="../img/story4.webp" alt="Families Came Together" style="object-position:50% 50%"></div><figcaption>Families Came Together</figcaption></figure></div>
-        </div>
-        <button class="car-btn next" id="next" aria-label="Next photo">›</button>
-      </div>
-      <div class="dots" id="dots"></div>
-    </div>
-  </section>
 
   <!-- ================= Events ================= -->
   <section id="events">
     <div class="floral flip" style="rotate:-160deg;right:-50px;top:-230px;--dur:8.5s;--origin:90% 10%" aria-hidden="true"><img src="../img/floral2.webp" alt=""></div>
     <div class="wrap">
-      <p class="eyebrow">Four celebrations, one forever</p>
-      <h2>Schedule of Events</h2>
-      <div class="ornament" aria-hidden="true"><span>✦</span></div>
       <div class="events-list" id="events-list">
         <article class="event">
           <div class="art-wrap"><img class="wash" src="../img/wash-peach.webp" alt=""><img class="art" src="../img/haldi.webp" alt="Watercolour of the couple at a brass urli with haldi, parasols and marigolds"></div>
@@ -113,7 +77,6 @@
           <h3 class="sheen-text">Haldi</h3>
           <p class="meta">11:00 AM &middot; Poolside, Rajlaxmi Heaven's</p>
           <p class="dress">Dress code: Hues Of White <i style="background:#FFFFFF"></i><i style="background:#F4F4F4"></i></p>
-          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=26.981638,75.6873018" target="_blank" rel="noopener">Get directions</a>
         </article>
         <article class="event">
           <div class="art-wrap"><img class="wash" src="../img/wash-peach.webp" alt=""><img class="art" src="../img/mayra.webp" alt="Watercolour of the couple at a brass urli with haldi, parasols and marigolds"></div>
@@ -121,7 +84,6 @@
           <h3 class="sheen-text">Mayra</h3>
           <p class="meta">3:30 PM &middot; Small Banquet Hall, Rajlaxmi Heaven's</p>
           <p class="dress">Dress code: Traditionals <i style="background:#E9C46A"></i><i style="background:#F4CDB0"></i></p>
-          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=26.981638,75.6873018" target="_blank" rel="noopener">Get directions</a>
         </article>
         <article class="event">
           <div class="art-wrap"><img class="wash" src="../img/wash-lavender.webp" alt=""><img class="art" src="../img/reception.webp" alt="Watercolour of the couple dancing under chandeliers framed by wisteria and pearls"></div>
@@ -129,7 +91,6 @@
           <h3 class="sheen-text">Sangeet</h3>
           <p class="meta">8:00 PM &middot; Main Banquet, Rajlaxmi Heaven's</p>
           <p class="dress">Dress code: Glitz and Glam <i style="background:#3D3957"></i><i style="background:#B08A45"></i></p>
-          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=26.981638,75.6873018" target="_blank" rel="noopener">Get directions</a>
         </article>
         <article class="event">
           <div class="art-wrap"><img class="wash" src="../img/wash-blush2.webp" alt=""><img class="art" src="../img/barat.webp" alt="Watercolour of the couple before a red floral mandap with brass lamps"></div>
@@ -137,7 +98,6 @@
           <h3 class="sheen-text">Barat</h3>
           <p class="meta">11:00 AM &middot; Main Gate, Rajlaxmi Heaven's</p>
           <p class="dress">Dress code: Traditional, Pastels Welcome <i style="background:#EDB8C0"></i><i style="background:#FBF8F4"></i></p>
-          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=26.981638,75.6873018" target="_blank" rel="noopener">Get directions</a>
         </article>
         <article class="event">
           <div class="art-wrap"><img class="wash" src="../img/wash-blush2.webp" alt=""><img class="art" src="../img/wedding.webp" alt="Watercolour of the couple before a red floral mandap with brass lamps"></div>
@@ -145,7 +105,6 @@
           <h3 class="sheen-text">Varmala</h3>
           <p class="meta">1:30 PM &middot; The Lawn, Rajlaxmi Heaven's</p>
           <p class="dress">Dress code: Traditional, Pastels Welcome <i style="background:#EDB8C0"></i><i style="background:#FBF8F4"></i></p>
-          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=26.981638,75.6873018" target="_blank" rel="noopener">Get directions</a>
         </article>
         <article class="event">
           <div class="art-wrap"><img class="wash" src="../img/wash-blush2.webp" alt=""><img class="art" src="../img/pheras.webp" alt="Watercolour of the couple before a red floral mandap with brass lamps"></div>
@@ -153,7 +112,6 @@
           <h3 class="sheen-text">Pheras</h3>
           <p class="meta">3:00 PM &middot; Pool Side, Rajlaxmi Heaven's</p>
           <p class="dress">Dress code: Traditional, Pastels Welcome <i style="background:#EDB8C0"></i><i style="background:#FBF8F4"></i></p>
-          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=26.981638,75.6873018" target="_blank" rel="noopener">Get directions</a>
         </article>
       </div>
     </div>
@@ -178,62 +136,6 @@
         </div>
         <p class="vc-name">Rajlaxmi Heaven's</p>
         <p class="vc-addr">Niwaru Rd, Lalchandpura, Rajasthan 302042</p>
-        <a class="btn-cal" id="cal-link-2" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
-          Add to calendar
-        </a>
-      </div>
-
-      <div class="map-card">
-        <svg viewBox="0 0 460 240" role="img" aria-label="Map showing Rajlaxmi Heaven's beside Mansarovar Metro Station in Jaipur">
-          <rect width="460" height="240" fill="#F7F3F5"/>
-          <g fill="#EDE6EC"><rect x="24" y="22" width="80" height="46" rx="5"/><rect x="330" y="26" width="100" height="44" rx="5"/><rect x="346" y="160" width="86" height="54" rx="5"/><rect x="40" y="170" width="96" height="48" rx="5"/><rect x="190" y="18" width="64" height="38" rx="5"/></g>
-          <g fill="#DCE9DD"><circle cx="150" cy="44" r="22"/><circle cx="420" cy="118" r="18"/><ellipse cx="250" cy="206" rx="34" ry="20"/></g>
-          <g fill="none" stroke-linecap="round">
-            <g stroke="#fff" stroke-width="12"><path d="M-10 70 C120 90 230 110 470 190"/><path d="M180 -10 C200 70 215 150 230 250"/><path d="M-10 150 C100 140 180 132 470 120"/></g>
-            <g stroke="#C8B6D6" stroke-width="5"><path d="M-10 70 C120 90 230 110 470 190"/></g>
-            <g stroke="#E3D7E6" stroke-width="3.5"><path d="M180 -10 C200 70 215 150 230 250"/><path d="M-10 150 C100 140 180 132 470 120"/></g>
-            <path d="M0 108 C90 112 170 120 290 100 S420 60 470 50" stroke="#6FB7B9" stroke-width="3" stroke-dasharray="7 5"/>
-          </g>
-          <circle cx="209" cy="132" r="15" fill="none" stroke="#fff" stroke-width="7"/><circle cx="209" cy="132" r="15" fill="none" stroke="#E3D7E6" stroke-width="3"/>
-          <g transform="translate(296 99)"><circle r="7" fill="#fff" stroke="#6FB7B9" stroke-width="2.6"/><text x="-10" y="-12" text-anchor="end" font-family="Cormorant SC, Georgia, serif" font-size="12" font-weight="600" fill="#4E8E90" letter-spacing="1"></text></g>
-          <text x="14" y="62" font-family="Cormorant SC, Georgia, serif" font-size="11" fill="#9A87A8" letter-spacing="1.5" transform="rotate(8 14 62)">Niwaru Road</text>
-          <text x="226" y="160" font-family="Cormorant SC, Georgia, serif" font-size="11" fill="#9A87A8" letter-spacing="1.5"></text>
-          <g transform="translate(330 128)">
-            <ellipse cx="0" cy="26" rx="14" ry="5" fill="#B08A45" opacity=".2"/>
-            <path d="M0 26 C-11 12 -13 6 -13 0 a13 13 0 0 1 26 0 c0 6 -2 12 -13 26z" fill="#B08A45"/>
-            <circle cx="0" cy="0" r="5" fill="#FBF8F4"/>
-            <text x="20" y="4" font-family="Cormorant SC, Georgia, serif" font-size="15" font-weight="600" fill="#3D3957" letter-spacing="1.5">RAJLAXMI HEAVEN'S</text>
-          </g>
-        </svg>
-        <div class="map-foot">
-          <div><b>Rajlaxmi Heaven's</b><span>Niwaru Rd, Lalchandpura, Rajasthan 302042</span></div>
-          <a class="btn-dir" id="dir-link" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M21 3 3 10.5l7.5 3 3 7.5z"/></svg>
-            Directions
-          </a>
-        </div>
-      </div>
-
-      <div class="travel">
-        <div>
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 12 3 9.5l1.5-1.5 8 1 3.5-4a1.8 1.8 0 0 1 2.5 2.5l-4 3.5 1 8-1.5 1.5L12 13l-3 3v2.5L7.5 20l-1-3-3-1L5 14.5h2.5z"/></svg></span>
-          <h3>Nearest airport</h3>
-          <p>Jaipur International Airport</p>
-          <small>About 27 km · 45 minutes by car</small>
-        </div>
-        <div>
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 10h14M9 17l-2 4M15 17l2 4"/><circle cx="9" cy="13.5" r=".8"/><circle cx="15" cy="13.5" r=".8"/></svg></span>
-          <h3>Railway Station</h3>
-          <p>Jaipur Junction Railway Station</p>
-          <small>About 13.2 km · 25 minutes by car</small>
-        </div>
-        <div>
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12a2 2 0 0 1 2 2v9a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V6a2 2 0 0 1 2-2z"/><path d="M4 11h16M8 21l2-3M16 21l-2-3"/></svg></span>
-          <h3>Nearest Metro</h3>
-          <p>Mansarovar Metro Station</p>
-          <small>About 16.5 km · 30 minutes by car</small>
-        </div>
       </div>
     </div>
   </section>
@@ -272,9 +174,6 @@
   </footer>
 </main>
 
-<button class="music" id="music" aria-label="Play music" aria-pressed="false">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" id="music-icon"></svg>
-</button>
 <canvas id="confetti" aria-hidden="true"></canvas>
 <canvas id="petals" aria-hidden="true"></canvas>
 
@@ -374,16 +273,6 @@
   $("#prev").addEventListener("click",()=>go(cur-1)); $("#next").addEventListener("click",()=>go(cur+1));
   syncDots();
 
-  /* ================= Music ================= */
-  const btn=$("#music"), icon=$("#music-icon");
-  const ICON_ON='<path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/>';
-  const ICON_OFF='<path d="M11 5 6 9H3v6h3l5 4z"/><path d="m22 9-6 6"/><path d="m16 9 6 6"/>';
-  icon.innerHTML=ICON_OFF;
-  const audio=new Audio("../media/bg.mp4"); audio.loop=true; audio.volume=0.5;
-  let playing=false;
-  function startMusic(){ try{ audio.play(); playing=true; btn.setAttribute("aria-pressed","true"); btn.setAttribute("aria-label","Pause music"); icon.innerHTML=ICON_ON; }catch(e){} }
-  function stopMusic(){ audio.pause(); playing=false; btn.setAttribute("aria-pressed","false"); btn.setAttribute("aria-label","Play music"); icon.innerHTML=ICON_OFF; }
-  btn.addEventListener("click",()=> playing?stopMusic():startMusic());
 
   /* ================= Scroll: fade-ins and parallax ================= */
   if(!reduce && "IntersectionObserver" in window){
