@@ -595,7 +595,7 @@
 
 /* ================= Event visibility ================= */
 (function(){
-  const CODE_MAP = {hd:"haldi",my:"mayra",sg:"sangeet",br:"barat",vm:"varmala",ph:"pheras"};
+  const CODE_MAP = {q7:"haldi",x2:"mayra",j9:"sangeet",w4:"barat",n6:"varmala",t3:"pheras"};
   const k = new URLSearchParams(location.search).get("k") || "";
   const slugs = new Set((k.match(/.{2}/g)||[]).map(c=>CODE_MAP[c]).filter(Boolean));
   document.querySelectorAll(".event[data-event]").forEach(el => {
