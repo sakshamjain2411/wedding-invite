@@ -1,0 +1,37 @@
+.hero {
+    padding-bottom: 280px;
+}
+#families, #venue {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.event {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.wrap {
+    max-width: 1200px;
+}
+.event .art-wrap {
+    max-width: 1200px;
+}
+.ganesha {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+.spacer {
+    height: 80px;
+}
+.sheen-text {
+    animation: none;
+    -webkit-text-fill-color: #3d3957
+}
